@@ -97,12 +97,13 @@ const chosePizzaType = () => {
     <option value="Neapolitan">Neapolitan</option>
     <option value="Sicilian">Sicilian</option>
   </select>`;
+  const select = document.getElementById("select");
   document.querySelector("select").addEventListener("change", (e) => {
     subTypeFood = e.target.value;
   });
 };
 
-subTypeFood = () => {
+const pizzaTypeConfirm = () => {
   showMessage(`You want ${subTypeFood}?`, "bot");
   inputWrapper.innerHTML = `
     <button class="send-btn" id="Yes">Yes</button>
