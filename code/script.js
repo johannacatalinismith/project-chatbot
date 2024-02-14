@@ -12,6 +12,7 @@ let foodChoice = "";
 let subTypeFood = "";
 let ageGroup = "";
 let price = "";
+let foodSize = "";
 
 // Functions goes here 👇
 
@@ -91,33 +92,37 @@ const chosePizzaType = () => {
   //How to create drop-down menu (perfect for multiple options!)
   inputWrapper.innerHTML = `<select id="select">
     <option value="" selected="" disabled="">Select what type of pizza you would like ↴</option>
-    <option value="4 pieces">4 pieces</option>
-    <option value="8 pieces">8 pieces</option>
-    <option value="12 pieces">12 pieces</option>
-    <option value="16 pieces">16 pieces</option>
-  </select>
-   `;
+    <option value="Margherita">Margherita</option>
+    <option value="Pepperoni">Pepperoni</option>
+    <option value="Neapolitan">Neapolitan</option>
+    <option value="Sicilian">Sicilian</option>
+  </select>`;
   document.querySelector("select").addEventListener("change", (e) => {
-   subTypeFood = e.target.value
+    subTypeFood = e.target.value;
   });
 };
 
-const showIcing = (message) => {
-  questionNumber++;
-  botReply(
-    `A ${message} cake, what a great choice! Do you want icing?<br/>(+ 5 €)`
-  );
+subTypeFood = () => {
+  showMessage(`You want ${subTypeFood}?`, "bot");
   inputWrapper.innerHTML = `
-  <button id="yesBtn">Yes please!</button>
-  <button id="noBtn">No, too sweet!</button>
-  `;
-  receivedInput = true;
-  document
-    .getElementById("yesBtn")
-    .addEventListener("click", () => nextQuestion("with icing"));
-  document
-    .getElementById("noBtn")
-    .addEventListener("click", () => nextQuestion("without icing"));
+    <button class="send-btn" id="Yes">Yes</button>
+    <button class="send-btn" id="No">No</button>`;
+  document.querySelector("#Yes").addEventListener("click", () => {
+    foodSize();
+  });
+  document.querySelector("#No").addEventListener("click", () => {
+    chosePizzaType();
+  });
+};
+
+foodSize = () => {
+  showMessage(`What size do you want?`, "bot");
+  inputWrapper.innerHTML = `
+    <button class="send-btn" id="Small">Small</button>
+    <button class="send-btn" id="Big">Big</button>`;
+  document.querySelector("#Small").addEventListener("click", () => {});
+
+  document.querySelector("#Big").addEventListener("click", () => {});
 };
 
 /*
