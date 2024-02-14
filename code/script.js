@@ -80,21 +80,45 @@ function addButtons() {
     <button class="send-btn" id="pizza">Pizza</button>
     <button class="send-btn" id="pasta">Pasta</button>
     <button class="send-btn" id="salad">Salad</button>`;
+  document.querySelector("#pizza").addEventListener("click", () => {
+    foodChoice = "pizza";
+    chosePizzaType();
+  });
 }
 
+const chosePizzaType = () => {
+  showMessage("Great choice! What type of pizza do you want?", "bot");
+  //How to create drop-down menu (perfect for multiple options!)
+  inputWrapper.innerHTML = `<select id="select">
+    <option value="" selected="" disabled="">Select what type of pizza you would like ↴</option>
+    <option value="4 pieces">4 pieces</option>
+    <option value="8 pieces">8 pieces</option>
+    <option value="12 pieces">12 pieces</option>
+    <option value="16 pieces">16 pieces</option>
+  </select>
+   `;
+  document.querySelector("select").addEventListener("change", (e) => {
+   subTypeFood = e.target.value
+  });
+};
 
 const showIcing = (message) => {
-  questionNumber++
-  botReply(`A ${message} cake, what a great choice! Do you want icing?<br/>(+ 5 €)`)
+  questionNumber++;
+  botReply(
+    `A ${message} cake, what a great choice! Do you want icing?<br/>(+ 5 €)`
+  );
   inputWrapper.innerHTML = `
   <button id="yesBtn">Yes please!</button>
   <button id="noBtn">No, too sweet!</button>
-  `
-  receivedInput = true
-  document.getElementById('yesBtn').addEventListener('click', () => nextQuestion('with icing'))
-  document.getElementById('noBtn').addEventListener('click', () => nextQuestion('without icing'))
-}
-
+  `;
+  receivedInput = true;
+  document
+    .getElementById("yesBtn")
+    .addEventListener("click", () => nextQuestion("with icing"));
+  document
+    .getElementById("noBtn")
+    .addEventListener("click", () => nextQuestion("without icing"));
+};
 
 /*
 
