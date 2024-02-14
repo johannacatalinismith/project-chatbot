@@ -5,12 +5,24 @@ const nameForm = document.getElementById("name-form");
 const inputWrapper = document.getElementById("input-wrapper");
 const sendBtn = document.getElementsByClassName("send-btn");
 
-// Roliga variabler
+// Here you declare variables to work with 👇
 let userName = "";
 let foodChoice = "";
-const foodButtons = inputWrapper.querySelectorAll(".send-btn");
+let subTypeFood = "";
+let ageGroup = "";
+let price = "";
 
 // Functions goes here 👇
+
+// A function to start the conversation
+const greetUser = () => {
+  // Here we call the function showMessage, that we declared earlier with the argument:
+  // "Hello there, what's your name?" for message, and the argument "bot" for sender
+  showMessage("Hello there, what's your name?", "bot");
+  // Just to check it out, change 'bot' to 'user' here 👆 and see what happens
+};
+
+/*
 
 const chooseFood = () => {
   showMessage(
@@ -25,7 +37,7 @@ function addButtons() {
     <button class="send-btn" id="pizza">Pizza</button>
     <button class="send-btn" id="pasta">Pasta</button>
     <button class="send-btn" id="salad">Salad</button>`;
-  console.log(foodButtons);
+  
 }
 
 
@@ -68,13 +80,7 @@ const showMessage = (message, sender) => {
   chat.scrollTop = chat.scrollHeight;
 };
 
-// A function to start the conversation
-const greetUser = () => {
-  // Here we call the function showMessage, that we declared earlier with the argument:
-  // "Hello there, what's your name?" for message, and the argument "bot" for sender
-  showMessage("Hello there, what's your name?", "bot");
-  // Just to check it out, change 'bot' to 'user' here 👆 and see what happens
-};
+
 
 // Eventlisteners goes here 👇
 
@@ -96,3 +102,6 @@ nameForm.addEventListener("submit", (e) => {
   nameInput.value = "";
   setTimeout(chooseFood, 1000);
 });
+
+
+*/
