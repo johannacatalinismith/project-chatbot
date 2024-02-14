@@ -175,31 +175,10 @@ const orderConfirmation = () => {
 
 
 
-const chosePizzaType = () => {
-  if (userName == "") {
-    showMessage("Pizza, What type of pizza do you want?", "bot");
-  } else {
-    showMessage(`Cool, ${userName}! What size do you want?`, "bot");
-  }
-};
-
-
-  // This little thing makes the chat scroll to the last message when there are too many to
-  // be shown in the chat box
-  
-};
 
 
 
-// Eventlisteners goes here 👇
 
-// Here we invoke the first function to get the chatbot to ask the first question when
-// the website is loaded. Normally we invoke functions like this: greeting()
-// To add a little delay to it, we can wrap it in a setTimeout (a built in JavaScript function):
-// and pass along two arguments:
-// 1.) the function we want to delay, and 2.) the delay in milliseconds
-// This means the greeting function will be called one second after the website is loaded.
-setTimeout(greetUser, 1000);
 
 
 
