@@ -35,13 +35,13 @@ const showMessage = (message, sender) => {
         <div class="bubble user-bubble">
           <p>${message}</p>
         </div>
-        <img src="assets/user.png" alt="User" />  
+        <img src="assets/dog.png" alt="User" />  
       </section>`;
     // The else if statement checks if the sender is the bot and if that's the case it inserts
     // an HTML section inside the chat with the posted message from the bot
   } else if (sender === "bot") {
     chat.innerHTML += `<section class="bot-msg">
-        <img src="assets/bot.png" alt="Bot" />
+        <img src="assets/cat-4475583_1280.png" alt="Bot" />
         <div class="bubble bot-bubble">
           <p>${message}</p>
         </div>
